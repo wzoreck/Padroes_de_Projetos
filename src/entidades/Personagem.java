@@ -7,8 +7,8 @@ public class Personagem {
     private String apelido;
     private String categoria;
     private float vida;
-    private List<Vestimento> vestimentos;
     private List<Arma> armas;
+    private int armaEquipada;
 
     public Personagem(String apelido, String categoria) {
         this.apelido = apelido;
@@ -28,23 +28,12 @@ public class Personagem {
         return this.vida;
     }
 
-    public void setDanono(float dano) {
+    public void setDano(float dano) {
         if (this.vida - dano < 0) {
             this.vida = 0;
         } else {
             this.vida -= dano;
         }
-    }
-
-    public void setVestimento(Vestimento vestimento) {
-        if (vestimentos == null)
-            vestimentos = new ArrayList<Vestimento>();
-
-        vestimentos.add(vestimento);
-    }
-
-    public List<Vestimento> getVestimentos() {
-        return this.vestimentos;
     }
 
     public void setArma(Arma arma) {
@@ -58,4 +47,11 @@ public class Personagem {
         return this.armas;
     }
 
+    public int getPosicaoArmaEquipada() {
+        return this.armaEquipada;
+    }
+
+    public void equiparArma(int posicaoLista) {
+        this.armaEquipada = posicaoLista;
+    }
 }
