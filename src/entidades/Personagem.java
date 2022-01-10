@@ -7,7 +7,7 @@ public class Personagem {
     private String apelido;
     private String categoria;
     private float vida;
-    private List<Arma> armas;
+    private List<RealArma> armas;
     private int armaEquipada;
 
     public Personagem(String apelido, String categoria) {
@@ -36,14 +36,14 @@ public class Personagem {
         }
     }
 
-    public void setArma(Arma arma) {
+    public void setArma(RealArma arma) {
         if (armas == null)
-            armas = new ArrayList<Arma>();
+            armas = new ArrayList<RealArma>();
 
         armas.add(arma);
     }
 
-    public List<Arma> getArmas() {
+    public List<RealArma> getArmas() {
         return this.armas;
     }
 

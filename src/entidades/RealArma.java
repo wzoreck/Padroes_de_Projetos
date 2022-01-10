@@ -1,16 +1,16 @@
 package entidades;
 
-public class Arma {
-    private String nome;
+public class RealArma extends AbstractArma{
     private float dano;
     private float resistencia;
 
-    public Arma(String nome, float dano, float resistencia) {
+    public RealArma(String nome, float dano, float resistencia) {
         this.nome = nome;
         this.dano = dano;
         this.resistencia = resistencia;
     }
 
+    @Override
     public String getNome() {
         return this.nome;
     }
