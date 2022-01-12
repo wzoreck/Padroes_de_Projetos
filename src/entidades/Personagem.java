@@ -9,6 +9,7 @@ public class Personagem {
     private float vida;
     private List<RealArma> armas;
     private int armaEquipada;
+    private EstadoPersonagem estado;
 
     public Personagem(String apelido, String categoria) {
         this.apelido = apelido;
@@ -53,5 +54,21 @@ public class Personagem {
 
     public void equiparArma(int posicaoLista) {
         this.armaEquipada = posicaoLista;
+    }
+
+    public EstadoPersonagem getEstado() {
+        return this.estado;
+    }
+
+    public void setEstado(EstadoPersonagem estado) {
+        this.estado = estado;
+    }
+
+    public void andarParar() {
+        estado.andarParar();
+    }
+
+    public void descansar() {
+        estado.descansar();
     }
 }
