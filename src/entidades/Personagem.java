@@ -1,9 +1,12 @@
 package entidades;
 
+import interfaces.Observador;
+import interfaces.Observavel;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Personagem {
+public class Personagem implements Observador {
     private String apelido;
     private String categoria;
     private float vida;
@@ -70,5 +73,10 @@ public class Personagem {
 
     public void descansar() {
         estado.descansar();
+    }
+
+    @Override
+    public void notificar(Observavel observavel, String mensagem) {
+        System.out.println("A arma " + observavel + " de " + apelido + " está no seguinte estado: " + mensagem);
     }
 }
